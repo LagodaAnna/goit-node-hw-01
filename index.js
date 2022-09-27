@@ -23,7 +23,7 @@ async function invokeAction({ action, id, name, email, phone }) {
     case 'get':
       const contact = await getContactById(id);
       if (!contact) {
-        throw new Error(`Contact with id:${id} not found`);
+        console.log(`Contact with id:${id} not found`);
       }
       console.log(contact);
       break;
@@ -36,7 +36,7 @@ async function invokeAction({ action, id, name, email, phone }) {
     case 'remove':
       const removedContact = await removeContact(id);
       if (!removedContact) {
-        throw new Error(`Contact with id:${id} not found`);
+        console.log(`Contact with id:${id} not found`);
       }
       console.log(removedContact);
       break;
